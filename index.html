@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pose Master</title>
+    <style>
+        /* Allgemeine Stile für die gesamte Seite */
+        body {
+            font-family: 'Verdana', Times, serif;
+            line-height: 1.2;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(255, 255, 255); /* Hintergrundfarbe */
+            color: black; /* Textfarbe */
+            text-align: center; /* Horizontal zentrieren */
+        }
+
+        /* Titelbild */
+        .image-container img {
+            max-width: 100%; /* Maximale Breite des Bildes */
+            max-height: 80vh; /* Maximale Höhe des Bildes */
+            margin: auto; /* Zentrieren des Bildes */
+        }
+
+        /* Textbild */
+        .image-text img {
+            max-width: 30%; /* Maximale Breite des Bildes */
+            max-height: 80vh; /* Maximale Höhe des Bildes */
+            margin: auto; /* Zentrieren des Bildes */
+            margin-top: 50px;
+        }
+
+
+        /* start Button Stile */
+        .start-button {
+            font-family: 'Arial', Times, serif;
+            background-color: rgba(165, 165, 165, 0.7); /* Hintergrund */
+            padding: 10px 30px; /* Abstand um den Text */
+            border: none; /* Keine Rahmen */
+            border-radius: 7px; /* Abrunde Ecken */
+            font-size: 18px; /* Schriftgröße */
+            cursor: pointer; /* Zeige Handcursor beim Überfahren */
+            margin-top: 50px; /* Abstand nach oben */
+            margin-bottom: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="bilder/pose master.png">
+    </div>
+ 
+    <div class="image-text">
+        <img src="bilder/anleitung.png">
+    </div>
+
+    <!-- start Button -->
+    <button class="start-button" onclick="window.location.href='game.html'">start</button>
+   
+</body>
+</html>
