@@ -3,4 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>win </title>
+    <title>You Win</title>
+    <style>
+        /* Allgemeine Stile für die gesamte Seite */
+        body {
+            font-family: 'Verdana', Times, serif;
+            line-height: auto;
+            margin: 0;
+            padding: 0;
+            background-image: url('bilder/win.png'); /* Hintergrundbild */
+            background-position: center;
+            background-size: cover; /* Bildgröße anpassen */
+            background-repeat: no-repeat; /* Hintergrundwiederholung verhindern */
+            color: black; /* Textfarbe */
+            text-align: center; /* Horizontal zentrieren */
+            min-height: 100vh; /* Mindesthöhe des Body auf 100% der Bildschirmhöhe setzen */
+            display: flex; /* Flexbox verwenden */
+            flex-direction: column; /* Vertikale Ausrichtung */
+            justify-content: space-between; /* Inhalt gleichmäßig auf der vertikalen Achse verteilen */
+            align-items: center; /* Horizontal zentrieren */
+        }
+
+        .button-container {
+            margin-bottom: 30px;     
+        }
+
+        .Try_again-button {
+            font-family: 'Arial', Times, serif;
+            background-color: rgba(165, 165, 165, 0); /* Hintergrund */
+            border: none; /* Keine Rahmen */
+            font-size: 18px; /* Schriftgröße */
+            cursor: pointer; /* Zeige Handcursor beim Überfahren */
+        }
+
+        .you-win-container {
+            margin-top: auto; /* Position am unteren Rand */
+            margin-bottom: auto; /* Position am oberen Rand */
+        }
+
+        .you-win-text {
+            font-size: 220px;
+            font-weight: bold;
+        }
+
+        .you {
+            margin-bottom: -70px; /* Reduziere den Abstand zwischen "YOU" und "WIN" */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="you-win-container">
+        <div class="you-win-text">
+            <div class="you">YOU</div>
+            <div>WIN</div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="Try_again-button" onclick="redirectToIndex()">Try again↺</button>
+    </div>
+
+    <script>
+        function redirectToIndex() {
+            window.location.href = "index.html"; // Weiterleitung zur index.html
+        }
+    </script>
+</body>
+</html>

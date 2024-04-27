@@ -4,3 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>game over</title>
+    <style>
+        /* Allgemeine Stile für die gesamte Seite */
+        body {
+            font-family: 'Verdana', Times, serif;
+            line-height: 1.2;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(221, 35, 35); /* Hintergrundfarbe */
+            color: black; /* Textfarbe */
+            text-align: center; /* Horizontal zentrieren */
+        }
+
+        .image-container img {
+            width: 35%; /* Breite des Bildes */
+            height: auto; /* Höhe des Bildes automatisch anpassen */
+            margin: auto; /* Zentrieren des Bildes */
+        }
+
+        .Try_again-button {
+            font-family: 'Arial', Times, serif;
+            background-color: rgba(165, 165, 165, 0); /* Hintergrund */
+            border: none; /* Keine Rahmen */
+            font-size: 25px; /* Schriftgröße */
+            cursor: pointer; /* Zeige Handcursor beim Überfahren */
+            margin-top: 30px;
+        }
+
+        .game-over-text {
+            font-size: 220px;
+            font-weight: bold;
+        }
+
+        .game {
+            margin-bottom: -60px; /* Reduziere den Abstand zwischen "YOU" und "WIN" */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="game-over-text">
+        <div class="game">GAME</div>
+        <div>OVER</div>
+    </div> 
+
+    <div class="image-container">
+        <img src="bilder/gameover.png">
+    </div>
+
+    <div class="button-container">
+        <button class="Try_again-button" onclick="redirectToIndex()">Try again↺</button>
+    </div>
+
+    <script>
+        function redirectToIndex() {
+            window.location.href = "index.html"; // Weiterleitung zur index.html
+        }
+    </script>
+
+</body>
+</html>
