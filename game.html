@@ -119,21 +119,27 @@
 
     async function drawPose(pose) {
     let imgSrc = "";
+    let className = "";
 
     switch (currentPoseIndex) {
-    case 0:
-        imgSrc = "bilder/pose1.png";
-        className = "pose 1";
-        break;
-    case 1:
-        imgSrc = "bilder/pose2.png";
-        className = "pose 2";
-        break;
-    case 2:
-        imgSrc = "bilder/pose3.png";
-        className = "pose 3";
-        break;
-}
+        case 0:
+            imgSrc = "bilder/pose1.png";
+            className = "pose 1";
+            break;
+        case 1:
+            imgSrc = "bilder/pose2.png";
+            className = "pose 2";
+            break;
+        case 2:
+            imgSrc = "bilder/pose3.png";
+            className = "pose 3";
+            break;
+        default:
+            // Fallback, falls der Wert von currentPoseIndex ungültig ist
+            imgSrc = "bilder/default.png";
+            className = "unknown";
+            break;
+    }
 
     const img = await loadImage(imgSrc);
 
@@ -157,10 +163,12 @@
     }
 }
 
-// Funktion zum Wechseln der Pose und Klasse alle 20 Sekunden
-function changePoseAndClass() {
+
+    // Funktion zum Wechseln der Pose und Klasse alle 20 Sekunden
+    function changePoseAndClass() {
     if (classChangesCount < 3) {
         currentPoseIndex = (currentPoseIndex + 1) % 3; // Zirkuläre Änderung der Indexposition, um alle Posen zu durchlaufen
+        console.log((currentPoseIndex + 1) % 3); // Konsolenausgabe für die Überprüfung der Werte
         classChangesCount++; // Inkrementieren der Zählvariable
         setTimeout(changePoseAndClass, 20000); // Nach 20 Sekunden erneut aufrufen
     } else {
@@ -168,6 +176,7 @@ function changePoseAndClass() {
         window.location.href = "win.html";
     }
 }
+
 
 // Funktion zum Überprüfen der Vorhersagewahrscheinlichkeit für jede Pose
 async function checkPrediction() {
