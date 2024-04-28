@@ -6,6 +6,7 @@
     <title>Pose Master</title>
     <style>
         body {
+            font-family: 'Inter', sans-serif; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -31,6 +32,7 @@
             border: 0px solid #ffffff; /* Rahmen um das Canvas-Element */
         }
     </style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
 </head>
 <body>
 
@@ -108,7 +110,7 @@
         // Prediction 2: run input through teachable machine classification model
         const prediction = await model.predict(posenetOutput);
     
-        
+
         className = prediction[0].className;
         probability = prediction[0].probability;
 
@@ -123,16 +125,16 @@
 
     switch (currentPoseIndex) {
         case 0:
-            imgSrc = "bilder/pose1.png";
-            className = "pose 1";
+            imgSrc = "bilder/pose3.png";
+            className = "pose3";
             break;
         case 1:
             imgSrc = "bilder/pose2.png";
-            className = "pose 2";
+            className = "pose2";
             break;
         case 2:
-            imgSrc = "bilder/pose3.png";
-            className = "pose 3";
+            imgSrc = "bilder/pose1.png";
+            className = "pose1";
             break;
         default:
             // Fallback, falls der Wert von currentPoseIndex ungültig ist
@@ -141,26 +143,38 @@
             break;
     }
 
+    console.log("className:", className); // Konsolenausgabe
+    console.log("imgSrc:", imgSrc); // Konsolenausgabe
+
     const img = await loadImage(imgSrc);
 
     if (webcam.canvas) {
-        ctx.drawImage(webcam.canvas, 0, 0);
-        ctx.fillStyle = "white";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0);
-        if (pose) {
-            const minPartConfidence = 0.5;
-            tmPose.drawKeypoints(pose.keypoints, minPartConfidence, ctx);
-            tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
-        }
-
-        // Anzeigen der vorhergesagten Klasse und Wahrscheinlichkeit
-        ctx.font = "30px Arial";
-        ctx.fillStyle = "black";
-        ctx.fillText(`${className}`, 10, 30);
-        ctx.fillText(`Probability: ${(probability * 100).toFixed(2)}%`, 10, 70);
-
+    ctx.drawImage(webcam.canvas, 0, 0);
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0);
+    if (pose) {
+        const minPartConfidence = 0.5;
+        tmPose.drawKeypoints(pose.keypoints, minPartConfidence, ctx);
+        tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
     }
+
+    // Anzeigen der vorhergesagten Klasse und Wahrscheinlichkeit
+    const roundedProbability = Math.ceil(probability * 100); // Runden auf die nächste ganze Zahl
+    const roundedProbabilityBy10 = Math.ceil(roundedProbability / 10) * 10; // Runden auf die nächste 10er-Schritt
+    const probabilityText = `${roundedProbabilityBy10}%`;
+    ctx.font = "60px 'Inter', sans-serif"; // Schriftart ändern
+    ctx.fillStyle = "black";
+    
+    // Rahmen um den Text
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 2;
+    ctx.strokeText(probabilityText, 10, 70);
+    
+    // Text ohne Rahmen
+    ctx.fillText(probabilityText, 10, 70);
+}
+
 }
 
 

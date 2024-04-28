@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilfe!</title>
+    <style>
+        /* Allgemeine Stile für die gesamte Seite */
+        body {
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.2;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(255, 255, 255); /* Hintergrundfarbe */
+            color: black; /* Textfarbe */
+        }
+
+        /* Navigationsleiste */
+        header {
+            background-color: #4b5750; /* Hintergrundfarbe */
+            padding: 10px; /* Innenabstand */
+            color: #fff; /* Textfarbe */
+            display: flex; /* Flexibles Layout */
+            justify-content: space-between; /* Abstand zwischen den Elementen */
+            align-items: center; /* Vertikale Ausrichtung */
+        }
+
+        /* Stile für die Links in der Navigationsleiste */
+        header a {
+            color: #fff; /* Textfarbe */
+            text-decoration: none; /* Keine Unterstreichung */
+            padding: 10px 20px; /* Innenabstand */
+            border-radius: 5px; /* Abrunde Ecken */
+        }
+
+        /* Stile für Hover-Zustand der Links */
+        header a:hover {
+            background-color: #38463a; /* Hintergrundfarbe ändern */
+        }
+
+        /* Hauptinhalt */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        /* Unsichtbarer Kasten für den Text */
+        .text-container {
+            max-width: 600px; /* Maximalbreite des Textcontainers */
+            text-align: left; /* Text linksbündig ausrichten */
+            padding: 20px; /* Innenabstand */
+            background-color: transparent; /* Transparenter Hintergrund */
+            border: none; /* Kein Rand */
+        }
+
+        .text-container h2 {
+            font-size: 24px; /* Schriftgröße für die Überschrift */
+            margin-bottom: 10px; /* Abstand nach unten für die Überschrift */
+        }
+
+        .text-container p {
+            font-size: 17px; /* Schriftgröße für den Text */
+            line-height: 1.5; /* Zeilenhöhe */
+            margin-bottom: 10px; /* Abstand nach unten für Absätze */
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+</head>
+<body>
+    <!-- Navigationsleiste -->
+    <header>
+        <div>mel★</div>
+        <div>
+            <a href="index.html">Startseite</a>
+        </div>
+    </header>
+
+    <!-- Hauptinhalt -->
+    <div class="main-content">
+        <div class="text-container">
+            <h2>Hilfe zur Körpererkennung:</h2>
+            <p>
+                Wenn die Kamera deinen Körper nicht erkennt, kann dies daran liegen, dass dein Abstand zur Kamera nicht optimal ist. Versuche, deinen Abstand zur Kamera anzupassen, indem du näher oder weiter weg gehst. Achte darauf, dass dein gesamter Körper im Sichtfeld der Kamera ist, damit eine präzise Erkennung möglich ist.
+            </p>
+            <p>
+                Bei Fragen: mmelanie.moor@gmail.com
+            </p>
+        </div>
+    </div>
+</body>
+</html>
